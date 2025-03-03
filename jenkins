@@ -32,9 +32,5 @@ pipeline {
                      jdk: '',
                      results: [[path: 'build/allure-results']]
                 }
-        archiveArtifacts(
-                artifacts: './reports/a11y/a11y_HomePage.html',
-                allowEmptyArchive: true
-            )
     }
 }
