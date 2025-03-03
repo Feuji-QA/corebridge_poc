@@ -7,21 +7,21 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'npm install'
+                    sh 'npm install'
                 }
             }
         }
         stage('Execute') {
             steps {
                 script {
-                    bat 'npx playwright test'
+                    sh 'npx playwright test'
                 }
             }
         }
         stage('Generate Report') {
             steps {
                 script {
-                    bat ' npx allure generate --clean allure-results'
+                    sh ' npx allure generate --clean allure-results'
                 }
             }
         }
