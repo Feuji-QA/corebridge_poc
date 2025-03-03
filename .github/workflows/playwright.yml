@@ -1,0 +1,70 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npx playwright test
+    - name:  Generate Report
+      run: npx allure generate --clean allure-results
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: Report
+        path: allure-report/
+        retention-days: 30
+  upload_index_page:
+    needs: [test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: git chechout
+        uses: actions/checkout@v4
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Report
+          path: ./reporter
+      - name: Final Report
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+            name: github-pages
+            path: reporter
+ 
+  deploy_report:
+    if: always()
+    # Add a dependency to the build job
+    needs: [upload_index_page]
+ 
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+ 
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+ 
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+          

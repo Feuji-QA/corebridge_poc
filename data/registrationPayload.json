@@ -1,0 +1,47 @@
+[
+    {
+      "IsActive": true,
+      "PurchaseDate": "2022-09-27T00:00:00",
+      "SerialNumber": "CHARY_C_@",
+      "Dealer": {
+        "DealerNumber": "315610",
+        "Name": "STAMFORD MOTORSPORTS",
+        "Customs": []
+      },
+      "Product": {
+        "Code": "GW-180",
+        "ModelYear": "2006",
+        "Customs": []
+      },
+      "Customer": {
+        "CustNumber": "Yash1234",
+        "FirstName": "testchary8090",
+        "LastName": "chary_8090",
+        "Address1": "LSW Street",
+        "Address2": "test",
+        "City": "LA",
+        "State": "CA",
+        "PostalCode": "49122",
+        "CountryCode": "US",
+        "Email": "chary800112@qa.com",
+        "LanguageCode": "en"
+      },
+      "RegistrationTypeCode": "Registration",
+      "RegistrationSourceCode": "Aimbase",
+      "SendSurvey": true,
+      "Customs": [
+        { "FieldName": "ENGINEMODEL1", "FieldValue": "F90LB2-1" },
+        { "FieldName": "ENGINEMODEL2", "FieldValue": "F90LB2-2" },
+        { "FieldName": "ENGINEMODEL3", "FieldValue": "F90LB2-3" },
+        { "FieldName": "ENGINEMODEL4", "FieldValue": "F90LB2-4" },
+        { "FieldName": "ENGINEMODEL5", "FieldValue": "F90LB2-5" },
+        { "FieldName": "ENGINESERIALNUMBER1", "FieldValue": "SAMXY 01234" },
+        { "FieldName": "ENGINESERIALNUMBER2", "FieldValue": "SAMXY 12345" },
+        { "FieldName": "ENGINESERIALNUMBER3", "FieldValue": "SAMXY 23456" },
+        { "FieldName": "ENGINESERIALNUMBER4", "FieldValue": "SAMXY 34567" },
+        { "FieldName": "ENGINESERIALNUMBER5", "FieldValue": "SAMXY 45678" }
+      ],
+      "DeliveryDate": "2022-10-26T00:00:00"
+    }
+  ]
+  

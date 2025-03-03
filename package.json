@@ -1,0 +1,38 @@
+{
+  "name": "playwright_utaf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:load": "k6 run -o experimental-prometheus-rw=http://10.10.90.97:9090/api/v1/write --env TEST_TYPE=load utils/performance.js",
+    "aimbase": "npx playwright test ./tests/aimbase.spec.js",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open",
+    "allure-report": "npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.8.5",
+    "@faker-js/faker": "^9.5.0",
+    "@playwright/test": "^1.43.1",
+    "@reportportal/agent-js-playwright": "^5.1.8",
+    "@types/node": "^20.12.7",
+    "ajv": "^8.12.0",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.15.1",
+    "cross-env": "^7.0.3",
+    "groq-sdk": "^0.12.0",
+    "k6-html-reporter": "^1.0.5",
+    "node-fetch": "^2.7.0"
+  },
+  "dependencies": {
+    "atob": "^2.1.2",
+    "axe-html-reporter": "^2.2.3",
+    "axios": "^1.6.8",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "k6-html-reporter": "^1.0.5"
+  }
+}

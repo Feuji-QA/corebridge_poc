@@ -1,0 +1,18 @@
+{
+    "aimbase":{
+        "selectCountryName": "US",
+        "ProductName":"AutoAI0jQ2 (AIU3 2023)",
+        "leadType":"Quote",
+        "option":"Y"
+    },
+    "bartlePage": {
+        "firstName": "Michael",
+        "lastName": "Smith",
+        "email": "michael.smith@testmail.com",
+        "phone": "9876543210",
+        "zipCode": "54321",
+        "selectDays":"3 to 7 days",
+        "comments": "Looking forward to a test ride before purchase."
+    }
+    
+}
