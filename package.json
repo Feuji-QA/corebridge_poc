@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean:allure-results": "rimraf allure-results",
+    "clean-results": "npm run clean:allure-results",
     "test:load": "k6 run -o experimental-prometheus-rw=http://10.10.90.97:9090/api/v1/write --env TEST_TYPE=load utils/performance.js",
     "aimbase": "npx playwright test ./tests/aimbase.spec.js",
+    "ui_test": " npx playwright test ./tests/bartleCycle.spec.js",
+    "api_test": "npx playwright test ./tests/api.spec.js",
+    "accessibility_test": "npx playwright test ./tests/bartCycle_a11y.spec.js",
     "allure:generate": "allure generate allure-results --clean",
     "allure:open": "allure open",
     "allure-report": "npm run allure:generate && npm run allure:open"
@@ -25,7 +30,8 @@
     "cross-env": "^7.0.3",
     "groq-sdk": "^0.12.0",
     "k6-html-reporter": "^1.0.5",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "atob": "^2.1.2",
