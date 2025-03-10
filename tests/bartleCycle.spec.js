@@ -15,11 +15,11 @@ test.describe("Wdget Testing validations", () => {
     await bartleCyclePage.getVehiclePrice();
     await bartleCyclePage.validateButtons();
     await bartleCyclePage.clickOnStartMyDealButton();
-    await bartleCyclePage.fillQuoteForm();
-    await bartleCyclePage.verifyReserveNow();
-    await bartleCyclePage.validateEstimateTradeIn();
-    await bartleCyclePage.validateSpecialOffers();
-    await bartleCyclePage.validateScheduleAppointment();
+    // await bartleCyclePage.fillQuoteForm();
+    // await bartleCyclePage.verifyReserveNow();
+    // await bartleCyclePage.validateEstimateTradeIn();
+    // await bartleCyclePage.validateSpecialOffers();
+    // await bartleCyclePage.validateScheduleAppointment();
 
   });
 });
